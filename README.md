@@ -1,47 +1,47 @@
 # SocketManager
-###iOS 原生Socket和CocoaAsyncSocket框架的简单使用
+### iOS 原生Socket和CocoaAsyncSocket框架的简单使用
 
-####一、`Socket`到底是什么？
-#####1、`Socket`原理
-######1.1、`套接字（Socket）`概念
+#### 一、`Socket`到底是什么？
+##### 1、`Socket`原理
+###### 1.1、`套接字（Socket）`概念
 `套接字（Socket）`是通信的基石，是支持`TCP/IP` 或者`UDP/IP`协议的网络通信的基本操作单元／编程接口（如下图）。它是网络通信过程中端点的抽象表示，包含进行网络通信必须的五种信息：`连接使用的协议`，`本地主机的IP地址`，`本地进程的协议端口`，`远地主机的IP地址`，`远地进程的协议端口`。
 ![](http://upload-images.jianshu.io/upload_images/937459-63be09c50d7bc451.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-######1.2、给套接字赋予地址
+###### 1.2、给套接字赋予地址
 依照建立套接字的目的不同，赋予套接字地址的方式有两种：服务器端使用`bind`，客户端使用`connect`。
 `bind`:给服务器端中的套接字赋予通信的地址和端口，`IP`和`Port`便可以区分一个`TCP/IP`链接通道，如果要区分特定的主机间链接，还需要提供`Hostname`。
 `connect`:客户端向特定网络地址的服务器发送连接请求。
-######1.3、建立`Socket`连接
+###### 1.3、建立`Socket`连接
 建立`Socket`连接至少需要一对套接字，其中一个运行于客户端，称为`ClientSocket`，另一个运行于服务器端，称为`ServerSocket`。
 套接字之间的连接过程分为三个步骤：`服务器监听（bind、listen）`，`客户端请求（connect）`，`连接确认（accept）`。
-######1.4`TCP`连接
+###### 1.4`TCP`连接
 创建`Socket`链接时，可以制定不同的传输层协议（`TCP`或`UDP`），当使用`TCP`协议进行链接时，该`Socket`链接便是`TCP`链接。
-######TCP连接建立（三次握手）----客户端执行`connect`触发
+###### TCP连接建立（三次握手）----客户端执行`connect`触发
 （1）第一次握手：`Client`将标志位`SYN`置为`1`，随机产生一个值`seq=J`，并将该数据包发送给`Server`，`Client`进入`SYN_SENT`状态，等待`Server`确认。
 （2）第二次握手：`Server`收到数据包后由标志位`SYN=1`知道`Client`请求建立连接，`Server`将标志位`SYN`和`ACK`都置为`1`，`ack=J+1`，随机产生一个值`seq=K`，并将该数据包发送给`Client`以确认连接请求，`Server`进入`SYN_RCVD`状态。
 （3）第三次握手：`Client`收到确认后，检查`ack`是否为`J+1`，`ACK`是否为`1`，如果正确则将标志位`ACK`置为`1`，`ack=K+1`，并将该数据包发送给`Server`，`Server`检查`ack`是否为`K+1`，`ACK`是否为`1`，如果正确则连接建立成功，`Client`和`Server`进入`ESTABLISHED`状态，完成三次握手，随后`Client`与`Server`之间可以开始传输数据了。
 ![三次握手](http://upload-images.jianshu.io/upload_images/937459-04e7cad226c56751.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-######TCP连接终止（四次挥手）----客户端或服务端执行`close`触发
+###### TCP连接终止（四次挥手）----客户端或服务端执行`close`触发
 （1）第一次挥手：`Client`发送一个`FIN`，用来关闭`Client`到`Server`的数据传送，`Client`进入`FIN_WAIT_1`状态。
 （2）第二次挥手：`Server`收到`FIN`后，发送一个`ACK`给`Client`，确认序号为收到序号`+1`（与`SYN`相同，一个`FIN`占用一个序号），`Server`进入`CLOSE_WAIT`状态。
 （3）第三次挥手：`Server`发送一个`FIN`，用来关闭`Server`到`Client`的数据传送，`Server`进入`LAST_ACK`状态。
 （4）第四次挥手：`Client`收到`FIN`后，`Client`进入`TIME_WAIT`状态，接着发送一个`ACK`给`Server`，确认序号为收到序号`+1`，`Server`进入`CLOSED`状态，完成四次挥手。
 ![四次挥手](http://upload-images.jianshu.io/upload_images/937459-728fd3fcf37e97a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-#####2、客户端／服务器端模式的理解
+##### 2、客户端／服务器端模式的理解
 首先服务器先启动对端口的监听，等待客户端的链接请求。
-######服务器端：
+###### 服务器端：
 （1）服务器调用`socket`创建`Socket`；
 （2）服务器调用`listen`设置缓冲区；
 （3）服务器通过`accept`接受客户端请求建立连接；
 （4）服务器与客户端建立连接之后，就可以通过`send`/`receive`向客户端发送或从客户端接收数据；
 （5）服务器调用`close`关闭 `Socket`；
-######客户端：
+###### 客户端：
 （1）客户端调用`socket`创建`Socket`；
 （2）客户端调用`connect`向服务器发起连接请求以建立连接；
 （3）客户端与服务器建立连接之后，就可以通过`send`/`receive`向客户端发送或从客户端接收数据；
 （4）客户端调用`close`关闭`Socket`；
 ![TCP链接](http://upload-images.jianshu.io/upload_images/937459-be5cd235ca65683e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-####二、基于`C`的`BSD Socket`客户端的实现
-#####1、接口介绍
+#### 二、基于`C`的`BSD Socket`客户端的实现
+##### 1、接口介绍
 ```
 //socket 创建并初始化 socket，返回该 socket 的文件描述符，如果描述符为 -1 表示创建失败。
 int socket(int addressFamily, int type,int protocol)
@@ -64,7 +64,7 @@ int sendto(int socketFileDescriptor,char *buffer, int bufferLength, int flags, s
 //从UDP socket 中读取数据，并保存发送者的网络地址信息，读取成功返回成功读取的字节数，否则返回 -1 。
 int recvfrom(int socketFileDescriptor,char *buffer, int bufferLength, int flags, sockaddr *fromAddress, int *fromAddressLength)
 ```
-#####2、实现
+##### 2、实现
 `BSDSocketManager.h`
 ```
 #import <Foundation/Foundation.h>
@@ -192,7 +192,7 @@ int recvfrom(int socketFileDescriptor,char *buffer, int bufferLength, int flags,
 }
 @end
 ```
-####三、基于`Socket`原生的`CocoaAsyncSocket`客户端的实现
+#### 三、基于`Socket`原生的`CocoaAsyncSocket`客户端的实现
 `GCDSocketManager.h`
 ```
 #import <Foundation/Foundation.h>
@@ -330,7 +330,7 @@ static int readLength = 4;
 
 @end
 ```
-####四、基于`CocoaAsyncSocket`Mac服务器的实现
+#### 四、基于`CocoaAsyncSocket`Mac服务器的实现
 `GCDSocketManager.h`
 ```
 #import <Foundation/Foundation.h>
