@@ -1,0 +1,742 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A755FA281626976152EB706 /* libPods-Mac服务器UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8670ED7B558522F081A638 /* libPods-Mac服务器UITests.a */; };
+		7A6FCE60569E43AB961165EF /* libPods-Mac服务器Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB43BC4163F413A2401CCDDB /* libPods-Mac服务器Tests.a */; };
+		871E80E01EF15B4D000FD6BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 871E80DF1EF15B4D000FD6BC /* AppDelegate.m */; };
+		871E80E31EF15B4D000FD6BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 871E80E21EF15B4D000FD6BC /* main.m */; };
+		871E80E61EF15B4D000FD6BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871E80E51EF15B4D000FD6BC /* ViewController.m */; };
+		871E80E81EF15B4D000FD6BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871E80E71EF15B4D000FD6BC /* Assets.xcassets */; };
+		871E80EB1EF15B4D000FD6BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871E80E91EF15B4D000FD6BC /* Main.storyboard */; };
+		871E80F61EF15B4D000FD6BC /* Mac___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 871E80F51EF15B4D000FD6BC /* Mac___Tests.m */; };
+		871E81011EF15B4D000FD6BC /* Mac___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 871E81001EF15B4D000FD6BC /* Mac___UITests.m */; };
+		871E81161EF162FF000FD6BC /* Client.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 871E81141EF162FF000FD6BC /* Client.xcdatamodeld */; };
+		873ED2841EF22C790054F1D8 /* GCDSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 873ED2831EF22C790054F1D8 /* GCDSocketManager.m */; };
+		D42A9D2A4B8D1D73C6147333 /* libPods-Mac服务器.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC171C9030D34599B79977 /* libPods-Mac服务器.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		871E80F21EF15B4D000FD6BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 871E80D31EF15B4D000FD6BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 871E80DA1EF15B4D000FD6BC;
+			remoteInfo = "Mac服务器";
+		};
+		871E80FD1EF15B4D000FD6BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 871E80D31EF15B4D000FD6BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 871E80DA1EF15B4D000FD6BC;
+			remoteInfo = "Mac服务器";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1497F9F482D015ED1A152A9F /* Pods-Mac服务器Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mac服务器Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mac服务器Tests/Pods-Mac服务器Tests.release.xcconfig"; sourceTree = "<group>"; };
+		172B3F450A7968B67C33748F /* Pods-Mac服务器.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mac服务器.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mac服务器/Pods-Mac服务器.debug.xcconfig"; sourceTree = "<group>"; };
+		49ADF48A476E285AE08CA214 /* Pods-Mac服务器Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mac服务器Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mac服务器Tests/Pods-Mac服务器Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		63EF6C9760B5F575D7682612 /* Pods-Mac服务器.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mac服务器.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mac服务器/Pods-Mac服务器.release.xcconfig"; sourceTree = "<group>"; };
+		6C8670ED7B558522F081A638 /* libPods-Mac服务器UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mac服务器UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82EA9EF6F797EF21F77393A1 /* Pods-Mac服务器UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mac服务器UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mac服务器UITests/Pods-Mac服务器UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		871E80DB1EF15B4D000FD6BC /* Mac服务器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mac服务器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		871E80DE1EF15B4D000FD6BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		871E80DF1EF15B4D000FD6BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		871E80E21EF15B4D000FD6BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		871E80E41EF15B4D000FD6BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		871E80E51EF15B4D000FD6BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		871E80E71EF15B4D000FD6BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		871E80EA1EF15B4D000FD6BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		871E80EC1EF15B4D000FD6BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		871E80F11EF15B4D000FD6BC /* Mac服务器Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mac服务器Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		871E80F51EF15B4D000FD6BC /* Mac___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Mac___Tests.m"; sourceTree = "<group>"; };
+		871E80F71EF15B4D000FD6BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		871E80FC1EF15B4D000FD6BC /* Mac服务器UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mac服务器UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		871E81001EF15B4D000FD6BC /* Mac___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Mac___UITests.m"; sourceTree = "<group>"; };
+		871E81021EF15B4D000FD6BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		871E81151EF162FF000FD6BC /* Client.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Client.xcdatamodel; sourceTree = "<group>"; };
+		873ED2821EF22C790054F1D8 /* GCDSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDSocketManager.h; sourceTree = "<group>"; };
+		873ED2831EF22C790054F1D8 /* GCDSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDSocketManager.m; sourceTree = "<group>"; };
+		990EBFEBA1F5133A7095F26C /* Pods-Mac服务器UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mac服务器UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mac服务器UITests/Pods-Mac服务器UITests.release.xcconfig"; sourceTree = "<group>"; };
+		B5AC171C9030D34599B79977 /* libPods-Mac服务器.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mac服务器.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB43BC4163F413A2401CCDDB /* libPods-Mac服务器Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mac服务器Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		871E80D81EF15B4D000FD6BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D42A9D2A4B8D1D73C6147333 /* libPods-Mac服务器.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		871E80EE1EF15B4D000FD6BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A6FCE60569E43AB961165EF /* libPods-Mac服务器Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		871E80F91EF15B4D000FD6BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A755FA281626976152EB706 /* libPods-Mac服务器UITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		871E80D21EF15B4D000FD6BC = {
+			isa = PBXGroup;
+			children = (
+				871E80DD1EF15B4D000FD6BC /* Mac服务器 */,
+				871E80F41EF15B4D000FD6BC /* Mac服务器Tests */,
+				871E80FF1EF15B4D000FD6BC /* Mac服务器UITests */,
+				871E80DC1EF15B4D000FD6BC /* Products */,
+				EFAA18CFA6A0EEACF9AA36A1 /* Pods */,
+				D5DDF73AAB0742C9F6CA9921 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		871E80DC1EF15B4D000FD6BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				871E80DB1EF15B4D000FD6BC /* Mac服务器.app */,
+				871E80F11EF15B4D000FD6BC /* Mac服务器Tests.xctest */,
+				871E80FC1EF15B4D000FD6BC /* Mac服务器UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		871E80DD1EF15B4D000FD6BC /* Mac服务器 */ = {
+			isa = PBXGroup;
+			children = (
+				871E80DE1EF15B4D000FD6BC /* AppDelegate.h */,
+				871E80DF1EF15B4D000FD6BC /* AppDelegate.m */,
+				871E80E41EF15B4D000FD6BC /* ViewController.h */,
+				871E80E51EF15B4D000FD6BC /* ViewController.m */,
+				873ED2821EF22C790054F1D8 /* GCDSocketManager.h */,
+				873ED2831EF22C790054F1D8 /* GCDSocketManager.m */,
+				871E81141EF162FF000FD6BC /* Client.xcdatamodeld */,
+				871E80E71EF15B4D000FD6BC /* Assets.xcassets */,
+				871E80E91EF15B4D000FD6BC /* Main.storyboard */,
+				871E80EC1EF15B4D000FD6BC /* Info.plist */,
+				871E80E11EF15B4D000FD6BC /* Supporting Files */,
+			);
+			path = "Mac服务器";
+			sourceTree = "<group>";
+		};
+		871E80E11EF15B4D000FD6BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				871E80E21EF15B4D000FD6BC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		871E80F41EF15B4D000FD6BC /* Mac服务器Tests */ = {
+			isa = PBXGroup;
+			children = (
+				871E80F51EF15B4D000FD6BC /* Mac___Tests.m */,
+				871E80F71EF15B4D000FD6BC /* Info.plist */,
+			);
+			path = "Mac服务器Tests";
+			sourceTree = "<group>";
+		};
+		871E80FF1EF15B4D000FD6BC /* Mac服务器UITests */ = {
+			isa = PBXGroup;
+			children = (
+				871E81001EF15B4D000FD6BC /* Mac___UITests.m */,
+				871E81021EF15B4D000FD6BC /* Info.plist */,
+			);
+			path = "Mac服务器UITests";
+			sourceTree = "<group>";
+		};
+		D5DDF73AAB0742C9F6CA9921 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC171C9030D34599B79977 /* libPods-Mac服务器.a */,
+				BB43BC4163F413A2401CCDDB /* libPods-Mac服务器Tests.a */,
+				6C8670ED7B558522F081A638 /* libPods-Mac服务器UITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFAA18CFA6A0EEACF9AA36A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				172B3F450A7968B67C33748F /* Pods-Mac服务器.debug.xcconfig */,
+				63EF6C9760B5F575D7682612 /* Pods-Mac服务器.release.xcconfig */,
+				49ADF48A476E285AE08CA214 /* Pods-Mac服务器Tests.debug.xcconfig */,
+				1497F9F482D015ED1A152A9F /* Pods-Mac服务器Tests.release.xcconfig */,
+				82EA9EF6F797EF21F77393A1 /* Pods-Mac服务器UITests.debug.xcconfig */,
+				990EBFEBA1F5133A7095F26C /* Pods-Mac服务器UITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		871E80DA1EF15B4D000FD6BC /* Mac服务器 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 871E81051EF15B4D000FD6BC /* Build configuration list for PBXNativeTarget "Mac服务器" */;
+			buildPhases = (
+				F6E9610DC1EAE795A920E31F /* [CP] Check Pods Manifest.lock */,
+				871E80D71EF15B4D000FD6BC /* Sources */,
+				871E80D81EF15B4D000FD6BC /* Frameworks */,
+				871E80D91EF15B4D000FD6BC /* Resources */,
+				8290265980EE199E39F22B17 /* [CP] Embed Pods Frameworks */,
+				FF0150D3AD95C9B9D1BD00D7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mac服务器";
+			productName = "Mac服务器";
+			productReference = 871E80DB1EF15B4D000FD6BC /* Mac服务器.app */;
+			productType = "com.apple.product-type.application";
+		};
+		871E80F01EF15B4D000FD6BC /* Mac服务器Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 871E81081EF15B4D000FD6BC /* Build configuration list for PBXNativeTarget "Mac服务器Tests" */;
+			buildPhases = (
+				B48EDEA7B070216B4BCCF686 /* [CP] Check Pods Manifest.lock */,
+				871E80ED1EF15B4D000FD6BC /* Sources */,
+				871E80EE1EF15B4D000FD6BC /* Frameworks */,
+				871E80EF1EF15B4D000FD6BC /* Resources */,
+				0F8FC504D75DB6715BD5F89E /* [CP] Embed Pods Frameworks */,
+				FD91B0D81DB965AF2A40BF20 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				871E80F31EF15B4D000FD6BC /* PBXTargetDependency */,
+			);
+			name = "Mac服务器Tests";
+			productName = "Mac服务器Tests";
+			productReference = 871E80F11EF15B4D000FD6BC /* Mac服务器Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		871E80FB1EF15B4D000FD6BC /* Mac服务器UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 871E810B1EF15B4D000FD6BC /* Build configuration list for PBXNativeTarget "Mac服务器UITests" */;
+			buildPhases = (
+				9A6FCC5C0EBAF7A8A56D031F /* [CP] Check Pods Manifest.lock */,
+				871E80F81EF15B4D000FD6BC /* Sources */,
+				871E80F91EF15B4D000FD6BC /* Frameworks */,
+				871E80FA1EF15B4D000FD6BC /* Resources */,
+				3EF9B4FBCD3470D44CCEB7FD /* [CP] Embed Pods Frameworks */,
+				CB8BE24596213CA16072EEBC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				871E80FE1EF15B4D000FD6BC /* PBXTargetDependency */,
+			);
+			name = "Mac服务器UITests";
+			productName = "Mac服务器UITests";
+			productReference = 871E80FC1EF15B4D000FD6BC /* Mac服务器UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		871E80D31EF15B4D000FD6BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = lainkai;
+				TargetAttributes = {
+					871E80DA1EF15B4D000FD6BC = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					871E80F01EF15B4D000FD6BC = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 871E80DA1EF15B4D000FD6BC;
+					};
+					871E80FB1EF15B4D000FD6BC = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 871E80DA1EF15B4D000FD6BC;
+					};
+				};
+			};
+			buildConfigurationList = 871E80D61EF15B4D000FD6BC /* Build configuration list for PBXProject "Mac服务器" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 871E80D21EF15B4D000FD6BC;
+			productRefGroup = 871E80DC1EF15B4D000FD6BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				871E80DA1EF15B4D000FD6BC /* Mac服务器 */,
+				871E80F01EF15B4D000FD6BC /* Mac服务器Tests */,
+				871E80FB1EF15B4D000FD6BC /* Mac服务器UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		871E80D91EF15B4D000FD6BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871E80E81EF15B4D000FD6BC /* Assets.xcassets in Resources */,
+				871E80EB1EF15B4D000FD6BC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		871E80EF1EF15B4D000FD6BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		871E80FA1EF15B4D000FD6BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F8FC504D75DB6715BD5F89E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mac服务器Tests/Pods-Mac服务器Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EF9B4FBCD3470D44CCEB7FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mac服务器UITests/Pods-Mac服务器UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8290265980EE199E39F22B17 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mac服务器/Pods-Mac服务器-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A6FCC5C0EBAF7A8A56D031F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B48EDEA7B070216B4BCCF686 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB8BE24596213CA16072EEBC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mac服务器UITests/Pods-Mac服务器UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6E9610DC1EAE795A920E31F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD91B0D81DB965AF2A40BF20 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mac服务器Tests/Pods-Mac服务器Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF0150D3AD95C9B9D1BD00D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mac服务器/Pods-Mac服务器-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		871E80D71EF15B4D000FD6BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871E81161EF162FF000FD6BC /* Client.xcdatamodeld in Sources */,
+				871E80E61EF15B4D000FD6BC /* ViewController.m in Sources */,
+				871E80E31EF15B4D000FD6BC /* main.m in Sources */,
+				871E80E01EF15B4D000FD6BC /* AppDelegate.m in Sources */,
+				873ED2841EF22C790054F1D8 /* GCDSocketManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		871E80ED1EF15B4D000FD6BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871E80F61EF15B4D000FD6BC /* Mac___Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		871E80F81EF15B4D000FD6BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871E81011EF15B4D000FD6BC /* Mac___UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		871E80F31EF15B4D000FD6BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 871E80DA1EF15B4D000FD6BC /* Mac服务器 */;
+			targetProxy = 871E80F21EF15B4D000FD6BC /* PBXContainerItemProxy */;
+		};
+		871E80FE1EF15B4D000FD6BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 871E80DA1EF15B4D000FD6BC /* Mac服务器 */;
+			targetProxy = 871E80FD1EF15B4D000FD6BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		871E80E91EF15B4D000FD6BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				871E80EA1EF15B4D000FD6BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		871E81031EF15B4D000FD6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		871E81041EF15B4D000FD6BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		871E81061EF15B4D000FD6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 172B3F450A7968B67C33748F /* Pods-Mac服务器.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Mac服务器/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liankai.Mac---";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		871E81071EF15B4D000FD6BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63EF6C9760B5F575D7682612 /* Pods-Mac服务器.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Mac服务器/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liankai.Mac---";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		871E81091EF15B4D000FD6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49ADF48A476E285AE08CA214 /* Pods-Mac服务器Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Mac服务器Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liankai.Mac---Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mac服务器.app/Contents/MacOS/Mac服务器";
+			};
+			name = Debug;
+		};
+		871E810A1EF15B4D000FD6BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1497F9F482D015ED1A152A9F /* Pods-Mac服务器Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Mac服务器Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liankai.Mac---Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mac服务器.app/Contents/MacOS/Mac服务器";
+			};
+			name = Release;
+		};
+		871E810C1EF15B4D000FD6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82EA9EF6F797EF21F77393A1 /* Pods-Mac服务器UITests.debug.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Mac服务器UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liankai.Mac---UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Mac服务器";
+			};
+			name = Debug;
+		};
+		871E810D1EF15B4D000FD6BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 990EBFEBA1F5133A7095F26C /* Pods-Mac服务器UITests.release.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Mac服务器UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liankai.Mac---UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Mac服务器";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		871E80D61EF15B4D000FD6BC /* Build configuration list for PBXProject "Mac服务器" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				871E81031EF15B4D000FD6BC /* Debug */,
+				871E81041EF15B4D000FD6BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		871E81051EF15B4D000FD6BC /* Build configuration list for PBXNativeTarget "Mac服务器" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				871E81061EF15B4D000FD6BC /* Debug */,
+				871E81071EF15B4D000FD6BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		871E81081EF15B4D000FD6BC /* Build configuration list for PBXNativeTarget "Mac服务器Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				871E81091EF15B4D000FD6BC /* Debug */,
+				871E810A1EF15B4D000FD6BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		871E810B1EF15B4D000FD6BC /* Build configuration list for PBXNativeTarget "Mac服务器UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				871E810C1EF15B4D000FD6BC /* Debug */,
+				871E810D1EF15B4D000FD6BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		871E81141EF162FF000FD6BC /* Client.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				871E81151EF162FF000FD6BC /* Client.xcdatamodel */,
+			);
+			currentVersion = 871E81151EF162FF000FD6BC /* Client.xcdatamodel */;
+			path = Client.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 871E80D31EF15B4D000FD6BC /* Project object */;
+}
