@@ -17,6 +17,7 @@
 		871E80F61EF15B4D000FD6BC /* Mac___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 871E80F51EF15B4D000FD6BC /* Mac___Tests.m */; };
 		871E81011EF15B4D000FD6BC /* Mac___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 871E81001EF15B4D000FD6BC /* Mac___UITests.m */; };
 		871E81161EF162FF000FD6BC /* Client.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 871E81141EF162FF000FD6BC /* Client.xcdatamodeld */; };
+		872DFF221F613FA800BAADAD /* GCDAsyncSocket+MY.m in Sources */ = {isa = PBXBuildFile; fileRef = 872DFF211F613FA800BAADAD /* GCDAsyncSocket+MY.m */; };
 		873ED2841EF22C790054F1D8 /* GCDSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 873ED2831EF22C790054F1D8 /* GCDSocketManager.m */; };
 		D42A9D2A4B8D1D73C6147333 /* libPods-Mac服务器.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC171C9030D34599B79977 /* libPods-Mac服务器.a */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,8 @@
 		871E81001EF15B4D000FD6BC /* Mac___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Mac___UITests.m"; sourceTree = "<group>"; };
 		871E81021EF15B4D000FD6BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		871E81151EF162FF000FD6BC /* Client.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Client.xcdatamodel; sourceTree = "<group>"; };
+		872DFF201F613FA800BAADAD /* GCDAsyncSocket+MY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GCDAsyncSocket+MY.h"; sourceTree = "<group>"; };
+		872DFF211F613FA800BAADAD /* GCDAsyncSocket+MY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GCDAsyncSocket+MY.m"; sourceTree = "<group>"; };
 		873ED2821EF22C790054F1D8 /* GCDSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDSocketManager.h; sourceTree = "<group>"; };
 		873ED2831EF22C790054F1D8 /* GCDSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDSocketManager.m; sourceTree = "<group>"; };
 		990EBFEBA1F5133A7095F26C /* Pods-Mac服务器UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mac服务器UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mac服务器UITests/Pods-Mac服务器UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				871E80E51EF15B4D000FD6BC /* ViewController.m */,
 				873ED2821EF22C790054F1D8 /* GCDSocketManager.h */,
 				873ED2831EF22C790054F1D8 /* GCDSocketManager.m */,
+				872DFF201F613FA800BAADAD /* GCDAsyncSocket+MY.h */,
+				872DFF211F613FA800BAADAD /* GCDAsyncSocket+MY.m */,
 				871E81141EF162FF000FD6BC /* Client.xcdatamodeld */,
 				871E80E71EF15B4D000FD6BC /* Assets.xcassets */,
 				871E80E91EF15B4D000FD6BC /* Main.storyboard */,
@@ -468,6 +473,7 @@
 				871E80E61EF15B4D000FD6BC /* ViewController.m in Sources */,
 				871E80E31EF15B4D000FD6BC /* main.m in Sources */,
 				871E80E01EF15B4D000FD6BC /* AppDelegate.m in Sources */,
+				872DFF221F613FA800BAADAD /* GCDAsyncSocket+MY.m in Sources */,
 				873ED2841EF22C790054F1D8 /* GCDSocketManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

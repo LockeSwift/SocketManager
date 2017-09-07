@@ -1,3 +1,8 @@
+```
+注意：
+* demo只是展现了socket的基本的内容，不可进行套用
+* host：127.0.0.1  port：1024-65535（操作系统上端口号1024以下是系统保留的，从1024-65535是用户使用的）
+```
 # SocketManager
 ### iOS 原生Socket和CocoaAsyncSocket框架的简单使用
 
@@ -483,3 +488,5 @@ static int readLength = 4;
 
 @end
 ```
+
+

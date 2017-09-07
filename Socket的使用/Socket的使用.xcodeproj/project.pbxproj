@@ -269,6 +269,7 @@
 				TargetAttributes = {
 					8787DE3C1EF103F000AAD6FC = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = Y9CBU99GBC;
 						ProvisioningStyle = Automatic;
 					};
 					8787DE581EF103F000AAD6FC = {
@@ -628,6 +629,7 @@
 			baseConfigurationReference = F559CBE4D95A27C7E1121DC9 /* Pods-Socket的使用.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y9CBU99GBC;
 				INFOPLIST_FILE = "Socket的使用/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.liankai.Socket---";
@@ -640,6 +642,7 @@
 			baseConfigurationReference = 5C0FF4615A12F9A161892E2A /* Pods-Socket的使用.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y9CBU99GBC;
 				INFOPLIST_FILE = "Socket的使用/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.liankai.Socket---";

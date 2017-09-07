@@ -8,11 +8,12 @@
 
 #import "GCDSocketManager.h"
 #import <CocoaAsyncSocket/GCDAsyncSocket.h>
+#import "GCDAsyncSocket+MY.h"
 
 @interface GCDSocketManager ()<GCDAsyncSocketDelegate>
 
 @property (nonatomic, strong) GCDAsyncSocket *server;
-@property (nonatomic, strong) NSMutableArray *clientArrsSocket;
+@property (nonatomic, strong) NSMutableArray *clientArrsSocket;//强引用占有，关闭则释放
 @property (nonatomic, assign) int fileLength;
 @property (nonatomic, strong) NSMutableData *receiveData;
 
@@ -22,6 +23,7 @@
 
 //读取数据长度
 static int readLength = 4;
+static int totalLength;//接收数据总长度
 
 + (instancetype)shareInstance {
     static dispatch_once_t onceToken;
@@ -61,6 +63,7 @@ static int readLength = 4;
 //断开链接
 - (void)disConnect {
     [self.server disconnect];
+    [self.clientArrsSocket removeAllObjects];
 }
 //发送消息
 - (void)sendMessage:(NSString *)message {
@@ -84,9 +87,7 @@ static int readLength = 4;
 
     self.returnStateInformation([NSString stringWithFormat:@"端口链入：host:%@,port:%d", newSocket.localHost, newSocket.localPort]);
     
-    //通过制定newScoket 读取数据（只能读取1条数据)
-    [newSocket readDataToLength:sizeof(int) withTimeout:-1 tag:1];
-    self.fileLength = 0;
+    [self startReceiveData:newSocket];
     
     
     //MARK: - 心跳检测写在这...
@@ -97,8 +98,15 @@ static int readLength = 4;
     if ([self.clientArrsSocket containsObject:sock]) {
         [self.clientArrsSocket removeObject:sock];
     }
-    
+    self.returnStateInformation([NSString stringWithFormat:@"断开连接,host:%@,port:%d", sock.localHost, sock.localPort]);
     //MARK: - 断线重连写在这...
+}
+//重启接收数据等待
+- (void)startReceiveData:(GCDAsyncSocket *)socket {
+    totalLength = 0;
+    self.receiveData = [NSMutableData data];//每次接收数据前都初始化data
+    //通过制定newScoket 读取数据（只能读取1条数据)
+    [socket readDataToLength:sizeof(int) withTimeout:-1 tag:0];
 }
 /**
  int i = 1;
@@ -108,26 +116,18 @@ static int readLength = 4;
  */
 //接收数据
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
-    int fileLength = 0;
-    if (self.fileLength == 0) {
-        self.receiveData = [NSMutableData data];
-        [data getBytes:&fileLength length:sizeof(int)];
-        self.fileLength = fileLength;
-    }
-    if (!fileLength) {
+    if (!totalLength) {
+        [data getBytes:&totalLength length:sizeof(int)];
+    } else {
         [self.receiveData appendData:data];
     }
-    if ([self.receiveData length] < self.fileLength) {
-        int leftoverLength = (int)(self.fileLength - [self.receiveData length]);
-        if (leftoverLength < readLength) {
-            [sock readDataToLength:leftoverLength withTimeout:-1 tag:1];
-        } else {
-            [sock readDataToLength:readLength withTimeout:-1 tag:1];
-        }
-    } else {
+    if (totalLength - self.receiveData.length == 0)  {
         self.returnStateInformation([NSString stringWithFormat:@"接收数据为：%@",[[NSString alloc] initWithData:self.receiveData encoding:NSUTF8StringEncoding]]);
-        [sock readDataToLength:sizeof(int) withTimeout:-1 tag:1];
-        self.fileLength = 0;
+        [self startReceiveData:sock];
+    } else if(totalLength - self.receiveData.length < readLength) {
+        [sock readDataToLength:totalLength - self.receiveData.length withTimeout:-1 tag:1];
+    } else {
+        [sock readDataToLength:readLength withTimeout:-1 tag:1];
     }
 }
 - (void)socket:(GCDAsyncSocket *)sock didReadPartialDataOfLength:(NSUInteger)partialLength tag:(long)tag {

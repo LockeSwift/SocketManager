@@ -12,8 +12,6 @@
 @interface GCDSocketManager ()<GCDAsyncSocketDelegate>
 
 @property (nonatomic, strong) GCDAsyncSocket *client;
-
-@property (nonatomic, assign) int fileLength;
 @property (nonatomic, strong) NSMutableData *receiveData;
 
 @end
@@ -22,6 +20,7 @@
 
 //读取数据长度
 static int readLength = 4;
+static int totalLength;//接收数据总长度
 
 + (instancetype)shareInstance {
     static dispatch_once_t onceToken;
@@ -63,8 +62,7 @@ static int readLength = 4;
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
     self.returnStateInformation([NSString stringWithFormat:@"连接成功,host:%@,port:%d", host, port]);
     
-    [self.client readDataToLength:sizeof(int) withTimeout:-1 tag:0];
-    self.fileLength = 0;
+    [self startReceiveData];
     
     //MARK: - 心跳检测写在这...
 }
@@ -80,43 +78,38 @@ static int readLength = 4;
 - (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag {
     self.returnStateInformation([NSString stringWithFormat:@"发送消息,host:%@,port:%d", sock.localHost, sock.localPort]);
 }
-//发送分段消息成功的回调
-- (void)socket:(GCDAsyncSocket *)sock didWritePartialDataOfLength:(NSUInteger)partialLength tag:(long)tag {
-}
+
 //为上一次设置的发送数据代理续时 (如果设置超时为-1，则永远不会调用到)
 - (NSTimeInterval)socket:(GCDAsyncSocket *)sock shouldTimeoutWriteWithTag:(long)tag elapsed:(NSTimeInterval)elapsed bytesDone:(NSUInteger)length {
     self.returnStateInformation([NSString stringWithFormat:@"来延时，tag:%ld,elapsed:%f,length:%ld",tag,elapsed,length]);
     return 10;
 }
+//重启接收数据等待
+- (void)startReceiveData {
+    totalLength = 0;
+    self.receiveData = [NSMutableData data];//每次接收数据前都初始化data
+    [self.client readDataToLength:sizeof(int) withTimeout:-1 tag:0];
+}
 
 //收到消息的回调
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
-    int fileLength = 0;
-    if (self.fileLength == 0) {
-        self.receiveData = [NSMutableData data];
-        [data getBytes:&fileLength length:sizeof(int)];
-        self.fileLength = fileLength;
-    }
-    if (!fileLength) {
+    if (!totalLength) {
+        [data getBytes:&totalLength length:sizeof(int)];
+    } else {
         [self.receiveData appendData:data];
     }
-    if ([self.receiveData length] < self.fileLength) {
-        int leftoverLength = (int)(self.fileLength - [self.receiveData length]);
-        if (leftoverLength < readLength) {
-            [sock readDataToLength:leftoverLength withTimeout:-1 tag:1];
-        } else {
-            [sock readDataToLength:readLength withTimeout:-1 tag:1];
-        }
-    } else {
+    if (totalLength - self.receiveData.length == 0)  {
         self.returnStateInformation([NSString stringWithFormat:@"接收数据为：%@",[[NSString alloc] initWithData:self.receiveData encoding:NSUTF8StringEncoding]]);
-        //再次开启
-        [self.client readDataToLength:sizeof(int) withTimeout:-1 tag:0];
-        self.fileLength = 0;
+        [self startReceiveData];
+    } else if(totalLength - self.receiveData.length < readLength) {
+        [sock readDataToLength:totalLength - self.receiveData.length withTimeout:-1 tag:1];
+    } else {
+        [sock readDataToLength:readLength withTimeout:-1 tag:1];
     }
 }
-//收到分段消息的回调
+//接收数据长度不符合readDataToLength:设定好的长度时，回调这个方法
 - (void)socket:(GCDAsyncSocket *)sock didReadPartialDataOfLength:(NSUInteger)partialLength tag:(long)tag {
-    self.returnStateInformation([NSString stringWithFormat:@"%lu",(unsigned long)partialLength]);
+    self.returnStateInformation([NSString stringWithFormat:@"不符合设定长度，此次接收的数据长度为%lu",(unsigned long)partialLength]);
 }
 //为上一次设置的读取数据代理续时 (如果设置超时为-1，则永远不会调用到)
 - (NSTimeInterval)socket:(GCDAsyncSocket *)sock shouldTimeoutReadWithTag:(long)tag elapsed:(NSTimeInterval)elapsed bytesDone:(NSUInteger)length {
